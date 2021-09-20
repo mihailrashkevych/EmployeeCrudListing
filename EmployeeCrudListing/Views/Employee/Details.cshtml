@@ -1,0 +1,50 @@
+﻿@model EmployeeCrudListing.Models.Employee
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+
+    <div>
+        <h4>Employee</h4>
+        <hr />
+        @using (Html.BeginForm())
+        {
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @Html.HiddenFor(model => model.Id)
+            <div class="form-group">
+                @Html.LabelFor(m => m.Id):
+                <br />
+                @Html.DisplayFor(m => m.Id)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Name):
+                <br />
+                @Html.DisplayFor(m => m.Name)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Age):
+                <br />
+                @Html.DisplayFor(m => m.Age)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Department):
+                <br />
+                @Html.DisplayFor(m => m.Department)
+            </div>
+            <div class="form-group">
+                @Html.ActionLink("Edit", "Edit", new { Id = Model.Id }) |
+                @Html.ActionLink("Back to list", "Index")
+            </div>
+        }
+    </div>
+</body>
+</html>
